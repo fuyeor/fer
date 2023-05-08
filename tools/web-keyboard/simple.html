@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<html>
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,viewport-fit=cover">
+        <title>Soft Keyboard Fuyeor Fanna (Web version)</title>
+        <meta name="description" content="Here is the web version of the FER soft keyboard.">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Soft Keyboard Fuyeor Fanna (Web version)">
+        <meta property="og:description" content="Here is the web version of the FER soft keyboard.">
+        <meta property="og:url" content="https://fer.fuyeor.com">
+        <meta property="og:site_name" content="Fuyeor Fanna">
+        <meta property="og:image" content="https://www.fuyeor.com/@assets/logo/logo.png">
+    </head>
+    
+    <body>
+        <div class="main-content" align="center" onLoad="conversion.saisie.focus()">
+            <form name="conversion">
+                <textarea name="saisie" rows="8" onKeyUp="transcrire()" class="textarea" id="input"></textarea>
+                <div class="keyboard">
+                    <table>
+                        <tr align="center">
+                            <input type="button" class="key letter" onclick="alpha('')" value="">
+                            <input type="button" class="key letter" onclick="alpha('')" value="">
+                            <input type="button" class="key letter" onclick="alpha('')" value="">
+                            <input type="button" class="key letter" onclick="alpha('')" value="">
+                            <input type="button" class="key letter" onclick="alpha('')" value="">
+                            <input type="button" class="key letter" onclick="alpha('')" value="">
+                            <input type="button" class="key letter" onclick="alpha('')" value="">
+                            <input type="button" class="key letter" onclick="alpha('')" value="">
+                            <input type="button" class="key letter" onclick="alpha('')" value="">
+                            <input type="button" class="key letter" onclick="alpha('')" value="">
+                            <input type="button" class="key letter" onclick="alpha('')" value="">
+                            <input type="button" class="key del" onclick="document.getElementById('input').value = document.getElementById('input').value.slice(0, -1)" value="Del">
+                        </tr>
+                    </table>
+                    <table>
+                        <tr align="center">
+                            <input type="button" class="key caps" value="Caps">
+                            <input type="button" class="key letter" onclick="alpha('')" value="">
+                            <input type="button" class="key letter" onclick="alpha('')" value="">
+                            <input type="button" class="key letter" onclick="alpha('')" value="">
+                            <input type="button" class="key letter" onclick="alpha('')" value="">
+                            <input type="button" class="key letter" onclick="alpha('')" value="">
+                            <input type="button" class="key letter" onclick="alpha('')" value="">
+                            <input type="button" class="key letter" onclick="alpha('')" value="">
+                            <input type="button" class="key letter" onclick="alpha('')" value="">
+                            <input type="button" class="key letter" onclick="alpha('')" value="">
+                            <input type="button" class="key letter" onclick="alpha('')" value="">
+                            <input type="button" class="key ent" onclick="insertNewLine()" value="Enter">
+                        </tr>
+                    </table>
+                    <table>
+                        <tr align="center">
+                            <input type="button" class="key shift" value="Shift">
+                            <input type="button" class="key letter" onclick="alpha('')" value="">
+                            <input type="button" class="key letter" onclick="alpha('')" value="">
+                            <input type="button" class="key letter" onclick="alpha('')" value="">
+                            <input type="button" class="key letter" onclick="alpha('')" value="">
+                            <input type="button" class="key letter" onclick="alpha('')" value="">
+                            <input type="button" class="key letter" onclick="alpha('')" value="">
+                            <input type="button" class="key letter" onclick="alpha('')" value="">
+                            <input type="button" class="key letter" onclick="alpha('')" value="">
+                            <input type="button" class="key letter" onclick="alpha('')" value="">
+                            <input type="button" class="key" onclick="alpha('')" value="">
+                            <input type="button" class="key" onclick="alpha('«')" value="«">
+                        </tr>
+                    </table>
+                    <table>
+                        <tr align="center">
+                            <input type="button" class="key" onclick="alpha('')" value="">
+                            <input type="button" class="key" onclick="alpha('')" value="">
+                            <input type="button" class="key" onclick="alpha('')" value="">
+                            <input type="button" class="key" onclick="alpha('')" value="">
+                            <input type="button" class="key" onclick="alpha('')" value="">
+                            <input type="button" class="key" onclick="alpha('')" value="">
+                            <input type="button" class="key" onclick="alpha('')" value="">
+                            <input type="button" class="key" onclick="alpha('')" value="">
+                            <input type="button" class="key" onclick="alpha('')" value="">
+                            <input type="button" class="key" onclick="alpha('')" value="">
+                            <input type="button" class="key" onclick="alpha('')" value="">
+                            <input type="button" class="key" onclick="alpha('»')" value="»">
+                        </tr>
+                    </table>
+                    <table>
+                        <tr align="center">
+                            <input type="button" class="key ctrl" value="Ctrl">
+                            <input type="button" class="key alt" value="Alt">
+                            <input type="button" class="key space" onclick="alpha(' ')" value="&nbsp;">
+                            <input type="button" class="key" onclick="alpha('')" value="">
+                            <input type="button" class="key" onclick="alpha('́')" value="◌́">
+                            <input type="button" class="key" onclick="alpha('̄')" value="◌̄">
+                            <input type="button" class="key" onclick="alpha('̂')" value="◌̂">
+                            <input type="button" class="key" onclick="alpha('̆')" value="◌̆">
+                            <input type="button" class="key" value="&nbsp;">
+                        </tr>
+                    </table>
+                </div>
+            </form>
+        </div>
+
+    <style>@font-face{font-family:'fer';src:local('feor'),url(https://fer.fuyeor.com/src/fer.ttf) format('truetype')}body{font-family:fer}.main-content{margin:40px 0 0 0}.keyboard{position:absolute;border:2px solid #e9e9e9;background-color:#f1f1f1;padding:20px 10px 0 10px;max-width:560px;margin:auto;margin:30px 0 0 0;border-radius:5px}.key{font-family:fer;width:30pt;height:30pt;color:#52545f;background-color:#fff;margin:0 3px 4px 3px;border-radius:4px;border:none;border:1px solid #aaaaaa40;box-shadow:inset 0 -2px 0 #ddd,inset 0px 1px 1px -1px #ddd,0px 1px 1px 0px rgb(180 180 211 / 0%);cursor:pointer;outline:none;font-size:20px}.key:hover{color:#29F}.letter{color:#bb1c1c}.textarea{font-family:fer;font-size:16.5pt;padding:10px;width:90%;outline:none;border:none;background-color:#F1F1F1}.caps{font-size:3px !important}.ctrl{font-size:3px !important}.shift{font-size:3px !important}.alt{font-size:3px !important}.del{font-size:3px !important}.ent{font-size:3px !important}.space{width:134pt}@media (max-width:600px){.keyboard{position:static !important;padding:10px 0 0 0}.key{margin:0 0 4px 3px !important;width:26pt !important;height:26pt !important;font-size:18px !important}}::-webkit-scrollbar{width:5px;height:5px}::-webkit-scrollbar-track{background:#f1f1f1;border-radius:24px}::-webkit-scrollbar-thumb{background:#c0c0c0;border-radius:24px}::-webkit-scrollbar-thumb:hover{background:#666}</style>
+
+    <script>var ca;function transit(){ca=document.conversion.saisie.value;document.bp.typedText.value=ca;document.bp.submit()}
+//src/input.js
+function alpha(item){var input=document.conversion.saisie;if(document.selection){input.focus();range=document.selection.createRange();range.text=item;range.select();}
+else if(input.selectionStart||input.selectionStart=='0'){var startPos=input.selectionStart;var endPos=input.selectionEnd;var cursorPos=startPos;var scrollTop=input.scrollTop;var baselength=0;input.value=input.value.substring(0,startPos)
++item
++input.value.substring(endPos,input.value.length);cursorPos+=item.length;input.focus();input.selectionStart=cursorPos;input.selectionEnd=cursorPos;input.scrollTop=scrollTop;}
+else{input.value+=item;input.focus();}}
+function copy(){textRange=document.conversion.saisie.createTextRange();textRange.execCommand("Copy");textRange="";}
+//move
+const keyboard = document.querySelector('.keyboard');
+let isDragging = false, startX, startY, startTop, startLeft;
+
+keyboard.addEventListener('mousedown', (e) => {
+  if (e.target === keyboard) {
+    isDragging = true;
+    startX = e.clientX;
+    startY = e.clientY;
+    startTop = parseFloat(getComputedStyle(keyboard).top);
+    startLeft = parseFloat(getComputedStyle(keyboard).left);
+    keyboard.style.cursor = 'grabbing';
+  }
+});
+
+const moveKeyboard = (deltaX, deltaY) => {
+  const maxX = window.innerWidth - keyboard.offsetWidth;
+  const maxY = window.innerHeight - keyboard.offsetHeight;
+  keyboard.style.top = `${Math.max(0, Math.min(startTop + deltaY, maxY))}px`;
+  keyboard.style.left = `${Math.max(0, Math.min(startLeft + deltaX, maxX))}px`;
+};
+
+document.addEventListener('mousemove', (e) => {
+  if (isDragging) {
+    moveKeyboard(e.clientX - startX, e.clientY - startY);
+  }
+});
+
+document.addEventListener('mouseup', () => {
+  isDragging = false;
+  keyboard.style.cursor = 'move';
+});
+
+window.addEventListener('beforeunload', () => {
+  localStorage.setItem('keyboardPosition', JSON.stringify({left: keyboard.style.left, top: keyboard.style.top}));
+});
+
+window.addEventListener('load', () => {
+  const position = localStorage.getItem('keyboardPosition');
+  if (position) {
+    const { left, top } = JSON.parse(position);
+    keyboard.style.left = left;
+    keyboard.style.top = top;
+  }
+});
+    
+
+
+//caps.
+function insertNewLine() {
+  var textarea = document.getElementById("input");
+  var cursorPosition = textarea.selectionStart;
+  var textBeforeCursor = textarea.value.slice(0, cursorPosition);
+  var textAfterCursor = textarea.value.slice(cursorPosition);
+  textarea.value = textBeforeCursor + "\n" + textAfterCursor;
+  textarea.selectionStart = textarea.selectionEnd = cursorPosition + 1;
+  textarea.focus();
+}
+    </script>
+                
+    </body>
+</html>
